@@ -16,10 +16,24 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
       yarn install
       yarn build
     displayName: 'Build'
     env:
       CI: true
+
+  - script: yarn test --coverage --ci --reporters=default --reporters=jest-junit
+    displayName: 'Test'
+    env:
+      CI: true
+
+  - task: PublishTestResults@1
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/junit*.xml'
+
+  - task: PublishCodeCoverageResults@2
+    inputs:
+      codeCoverageTool: 'cobertura'
+      summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
+      reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/lcov-report'
