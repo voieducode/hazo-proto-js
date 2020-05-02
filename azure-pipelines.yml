@@ -32,7 +32,7 @@ steps:
       testResultsFormat: 'JUnit'
       testResultsFiles: '**/junit*.xml'
 
-  - task: PublishCodeCoverageResults@2
+  - task: PublishCodeCoverageResults@1
     inputs:
       codeCoverageTool: 'cobertura'
       summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
