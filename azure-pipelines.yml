@@ -34,7 +34,7 @@ steps:
 
   - task: PublishCodeCoverageResults@1
     inputs:
-      codeCoverageTool: 'cobertura'
+      codeCoverageTool: 'Cobertura'
       summaryFileLocation: '$(System.DefaultWorkingDirectory)/coverage/cobertura-coverage.xml'
       reportDirectory: '$(System.DefaultWorkingDirectory)/coverage/lcov-report'
       pathToSources: '$(System.DefaultWorkingDirectory)/src'
