@@ -17,7 +17,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src --color",
-    "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}"
+    "format": "prettier --write src/**/*.{ts,tsx,scss,css,js,json}"
   },
   "eslintConfig": {
     "extends": [
